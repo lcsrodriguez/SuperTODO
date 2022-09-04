@@ -100,11 +100,11 @@ You can then use the command as follows:
 
 ### Screenshots
 
-| <img src="img/1.png" width="700px">  |
-|---|
-| <img src="img/2.png" width="700px">  |
-| <img src="img/3.png" width="700px">  |
-
+<p align="center">
+ <img src="img/1.png" width="700px"> 
+ <img src="img/2.png" width="700px"> 
+ <img src="img/3.png" width="700px"> 
+</p>
 
 ### Sample document
 
