@@ -37,19 +37,19 @@
 \RequirePackage{marginnote}
 \RequirePackage{amssymb}
 
-% Counters  
+% Counters
 \newcounter{FRAMESCOUNTERALL}
 \newcounter{FRAMESCOUNTERINSERT}
 \newcounter{FRAMESCOUNTERUPDATE}
-\newcounter{FRAMESCOUNTERREMOVE}
+\newcounter{FRAMESCOUNTERDELETE}
 \newcounter{FRAMESCOUNTERREVIEW}
 \newcounter{FRAMESCOUNTERIMPORTANT}
 
 
-% New auxiliary commands
-\newcommand\GetTODO{Number of todo : \theFRAMESCOUNTERALL}
+% Deprecated way of printing the header
+%\hspace{-3mm}\fcolorbox{#4}{#3}{\IfBooleanTF{#5}{\textcolor{#4}{\textbf{$\circledast$}}}{\textcolor{#4}{\textbf{#2}} $\diamond$}  #6}\hspace{-3mm}
 
-
+%\IfBooleanTF{#5}{\textcolor{#4}{\textbf{$\circledast$}}}{\textcolor{#4}{\textbf{#2}} $\diamond$} #6
 
 
 % Underlying main function
@@ -105,12 +105,15 @@
     \block[#1][I][SeaGreen][black][#2]{#3}
 }
 \NewDocumentCommand\updateTD{O{block} s m}{
+    \addtocounter{FRAMESCOUNTERUPDATE}{1}
     \block[#1][U][yellow][black][#2]{#3}
 }
 \NewDocumentCommand\deleteTD{O{block} s m}{
+    \addtocounter{FRAMESCOUNTERDELETE}{1}
     \block[#1][D][red][black][#2]{#3}
 }
 \NewDocumentCommand\reviewTD{O{block} s m}{
+    \addtocounter{FRAMESCOUNTERREVIEW}{1}
     \block[#1][R][Cyan][black][#2]{#3}
 }
 
@@ -120,3 +123,6 @@
     \node[draw,circle,inner sep=0.7pt, left=2mm](C) {\textbf{#1}};
   \end{tikzpicture}
 }
+
+% New auxiliary commands
+\newcommand\GetTODO{Number of todo : \theFRAMESCOUNTERALL}
