@@ -15,8 +15,39 @@ This package is written using the $\LaTeX 2_\varepsilon$ environment which provi
 
 ## Features
 
-**Upload to CTAN**[^2]: The upload on
+**Upload to CTAN**[^2]: The upload on CTAN is planned and will be performed in the coming days.
 
+### Getting started
+
+1. Import the package at the top of the compiled document:
+```latex
+\usepackage{supertodo}
+```
+
+2. After the `\begin{document}` tag, add the specified **`SuperTODO`** tag:
+
+```latex
+\begin{document}
+...
+
+\insertTD{Add the image}
+\updateTD{Change the font size here}
+\deleteTD{Remove the last item}
+\reviewTD{Review the fifth item above}
+
+... 
+\end{document}
+```
+
+**Remarks**:
+- By default, the frames are printed as **blocks** environment. You can force the frame to be embedded within the current text with the optional parameter: `inline`
+```latex
+\insertTD[inline]{Add the image}
+```
+- You can also raise a flag regarding the importance level of the task to be completed
+```latex
+\deleteTD*{Delete this Tikz figure}
+```
 
 ### Available environments
 
@@ -70,6 +101,8 @@ The development phases required the study and reading of the following online re
 - https://www.overleaf.com/learn/latex/Understanding_packages_and_class_files
 - https://www.overleaf.com/learn/latex/Writing_your_own_package
 - https://www.overleaf.com/learn/latex/Margin_notes
+- https://www.ctan.org/help/upload-pkg
+- https://mirror.ibcp.fr/pub/CTAN/macros/latex/base/clsguide.pdf
 
 ## License
 
@@ -77,6 +110,6 @@ Development: **Lucas RODRIGUEZ** (August 2022 - ...)
 
 Please check the [LICENSE](LICENSE) file for the complete license information.
 
-[^1]: The default commands follow the CRUD (CREATE, READ, UPDATE, DELETE) paradigm.
+[^1]: The default commands follow the CRUD (CREATE, READ, UPDATE, DELETE) terminology.
 
 [^2]: **CTAN**: Comprehensive $\TeX$ Archive Network [official website](https://www.ctan.org/)
