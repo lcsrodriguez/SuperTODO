@@ -24,7 +24,11 @@ Tested and fully operationnal on the following document classes:
 
 ### Getting started
 
-1. Import the package at the top of the compiled document:
+1. Import the package. It can be either:
+    - imported from CTAN
+    - downloaded from the current release and put in the same-level directory as the main file from your project
+
+In both cases, you can finally use the package with the following *at the top of the compiled document*:
 ```latex
 \usepackage{supertodo}
 ```
@@ -96,14 +100,12 @@ You can then use the command as follows:
 
 ### Screenshots
 
-<p align="center">
-<img src="img/1.png" width="700px">
+| <img src="img/1.png" width="700px">  |
+|---|
+| <img src="img/2.png" width="700px">  |
+| <img src="img/3.png" width="700px">  |
 
-<img src="img/2.png" width="700px">
 
-<img src="img/3.png" width="700px">
-
-</p>
 ### Sample document
 
 You can easily test the module with this [sandbox document](#).
