@@ -26,7 +26,7 @@ Tested and fully operationnal on the following document classes:
 
 1. Import the package. It can be either:
     - imported from CTAN
-    - downloaded from the current release and put in the same-level directory as the main file from your project
+    - downloaded (the `.sty` file) from the current release and put in the same-level directory as the main file from your project
 
 In both cases, you can finally use the package with the following *at the top of the compiled document*:
 ```latex
@@ -60,14 +60,12 @@ In both cases, you can finally use the package with the following *at the top of
 
 ### Available environments
 
-| Level  | Background color  | Inline | Block |
-|:------:|------------------|--------|-------|
-|  INSERT      |  GREEN       |  ✅      |  ✅     |
-|  UPDATE      |    YELLOW         |  ✅      |  ✅     |
-|  DELETE      |       RED           | ✅       |  ✅     |
-|  REVIEW      |       BLUE               |  ✅      |  ✅     |
-
-TODO: Some examples with inline/block, important/normal, ...
+| Level  | Background color  | Inline | Block | Capital |
+|:------:|------------------|--------|-------|:-------:|
+|  INSERT      |  GREEN       |  ✅      |  ✅     | I |
+|  UPDATE      |    YELLOW         |  ✅      |  ✅     | U |
+|  DELETE      |       RED           | ✅       |  ✅     | D |
+|  REVIEW      |       BLUE               |  ✅      |  ✅     | R |
 
 
 The **`SuperTODO`** allows a wide flexibility on implementation by making easy to the end-user the declaration and use of new commands.
