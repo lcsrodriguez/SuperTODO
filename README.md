@@ -24,6 +24,22 @@ This package is written using the $\LaTeX 2_\varepsilon$ environment which provi
 |  REVIEW      |       BLUE               |  ✅      |  ✅     |
 
 
+### Add a new command
+
+If you want to implement a new command, denoted below as `abcde`, please procede as follows:
+
+```latex
+\usepackage{supertodo}
+
+% To be specified AFTER the supertodo package import, NEVER BEFORE !!
+\NewDocumentCommand\abcdeTD{O{block} s m}{
+    \block[#1][<capital>][<bgcolor>][<fgcolor>][#2]{#3}
+}
+```
+where you can specify:
+- `<capital>`:
+- `<bgcolor>`:
+- `<fgcolor>`:
 
 ## References
 
@@ -34,4 +50,4 @@ This package is written using the $\LaTeX 2_\varepsilon$ environment which provi
 ## License
 
 
-Please check the [LICENSE](LICENSE.md) file for the complete license information.
+Please check the [LICENSE](LICENSE) file for the complete license information.
