@@ -17,6 +17,11 @@ This package is written using the $\LaTeX 2_\varepsilon$ environment which provi
 
 **Upload to CTAN**[^2]: The upload on CTAN is planned and will be performed in the coming days.
 
+Tested and fully operationnal on the following document classes:
+- `article`
+- `report`
+- `book`
+
 ### Getting started
 
 1. Import the package at the top of the compiled document:
@@ -91,8 +96,17 @@ You can then use the command as follows:
 
 ### Screenshots
 
+<p align="center">
+<img src="img/1.png" width="700px">
 
+<img src="img/2.png" width="700px">
+
+<img src="img/3.png" width="700px">
+
+</p>
 ### Sample document
+
+You can easily test the module with this [sandbox document](#).
 
 ## References
 
