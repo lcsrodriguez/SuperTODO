@@ -3,17 +3,16 @@
 
 ## Introduction
 
+LaTeX package for TODO commands
 
 ### Available environments
 
-| Level (to ...)  | Background color | Text color (foreground) | Inline | Block |
+| Level  | Background color | Text color (foreground) | Inline | Block |
 |:------:|------------------|-------------------------|--------|-------|
-|  ADD (TEXT/EXTRACT)      |  GREEN                |     Black                    |  ✅      |  ✅     |
-|  ADD (FIGURE[^1]/TABLE)      |  GREEN                |     Black                    |  ✅      |  ✅     |
+|  INSERT      |  GREEN                |     Black                    |  ✅      |  ✅     |
 |  UPDATE      |    YELLOW              |      Black                |  ✅      |  ✅     |
 |  DELETE      |       RED           |     Black                    | ✅       |  ✅     |
-|  CHECK      |       BLUE           |    Black                     |  ✅      |  ✅     |
-|  Custom      |       Custom           |    Custom                     |  ❌      |  ❌     |
+|  REVIEW      |       BLUE           |    Black                     |  ✅      |  ✅     |
 
 
 ## References
@@ -26,5 +25,3 @@
 
 
 Please check the [LICENSE](LICENSE.md) file for the complete license information.
-
-[^1]: The term `figure` refers to its global definition: table, tabular, picture, schema, ...
