@@ -1,0 +1,122 @@
+%
+%
+%    ######  ##     ## ########  ######## ########  ########  #######  ########   #######  
+%   ##    ## ##     ## ##     ## ##       ##     ##    ##    ##     ## ##     ## ##     ## 
+%   ##       ##     ## ##     ## ##       ##     ##    ##    ##     ## ##     ## ##     ## 
+%    ######  ##     ## ########  ######   ########     ##    ##     ## ##     ## ##     ## 
+%         ## ##     ## ##        ##       ##   ##      ##    ##     ## ##     ## ##     ## 
+%   ##    ## ##     ## ##        ##       ##    ##     ##    ##     ## ##     ## ##     ## 
+%    ######   #######  ##        ######## ##     ##    ##     #######  ########   #######  
+%
+%           SuperTODO LaTeX package
+%
+%           Developed & Maintained by Lucas RODRIGUEZ
+%               - github.com/lcsrodriguez
+%               - lcsrodriguez.github.io
+%               
+%           License: MIT
+%           Date: August - September 2022
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Identification
+%%The package identifies itself and the LaTeX version needed
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{supertodo}[2022/08/22 SuperTODO package]
+
+
+% Required packages/classes and Preliminary Definitions, needed by the options
+\RequirePackage{ifthen}
+\PassOptionsToPackage{dvipsnames}{xcolor} % specifying the color panel
+\RequirePackage{xcolor}
+\RequirePackage{lipsum} % for testing purposes only
+\RequirePackage{tikz} % for testing purposes only
+\RequirePackage{xparse}
+\RequirePackage{marginnote}
+\RequirePackage{amssymb}
+
+% Counters
+\newcounter{FRAMESCOUNTERALL}
+\newcounter{FRAMESCOUNTERINSERT}
+\newcounter{FRAMESCOUNTERUPDATE}
+\newcounter{FRAMESCOUNTERREMOVE}
+\newcounter{FRAMESCOUNTERREVIEW}
+\newcounter{FRAMESCOUNTERIMPORTANT}
+
+
+% New auxiliary commands
+\newcommand\GetTODO{Number of todo : \theFRAMESCOUNTERALL}
+
+
+
+
+% Underlying main function
+\NewDocumentCommand\block{o O{A} O{yellow} O{red} O{\BooleanFalse} m}{
+    % Increment counters
+    \addtocounter{FRAMESCOUNTERALL}{1}
+    \label{todo-\theFRAMESCOUNTERALL} % Add a label
+    \marginnote{{\small $\longrightarrow$ \textbf{{\#{\theFRAMESCOUNTERALL}}} \IfBooleanTF{#5}{\newline\vspace{3mm}\textcolor{red}{\textbf{$\circledast$} \underline{Important}}}{} }}
+    %  \marginpar{{\small \textbf{TODO \fbox{\#{\theFRAMESCOUNTERALL}}}} \IfBooleanTF{#5}{Important}{}}
+    % #1 --> type of frame: block/inline (default: block)
+    % #2 --> capital letter (default: A) (corresponding to the letter printed at the first position)
+    % #3 --> background color (default: yellow)
+    % #4 --> border/capital letter color (default: red)
+    % #5 --> priority (normal/important) (default: no star) (a star (*) has to be clearly specified)
+    % #6 --> message to be printed out (required)
+    % Filtering the parameters values
+    \IfValueTF{#1}{
+        \ifthenelse{\equal{#1}{inline}}{ % Inline style
+            \hspace{-3mm}\fcolorbox{#4}{#3}{{\textcolor{#4}{\textbf{#2}} $\diamond$}  #6}\hspace{-3mm}
+        }{ % Block style
+            {\noindent
+                \begin{center}
+                    \fcolorbox{#4}{#3}{
+                    \begin{minipage}[t]{0.95\textwidth}
+                    {\small
+                        {\textcolor{#4}{\textbf{#2}} $\diamond$} #6
+                    }
+                    \end{minipage}
+                }
+                \end{center}
+            }
+            \vspace{-1mm}
+        }
+    }{ % Block style
+        {\noindent
+            \begin{center}
+                \fcolorbox{#4}{#3}{
+                \begin{minipage}[t]{0.95\textwidth}
+                {\small
+                    {\textcolor{#4}{\textbf{#2}} $\diamond$} #6
+                }
+                \end{minipage}
+            }
+            \end{center}
+        }
+        \vspace{-1mm}
+    }
+}
+
+% End-user functions
+\NewDocumentCommand\insertTD{O{block} s m}{
+    \addtocounter{FRAMESCOUNTERINSERT}{1}
+    \block[#1][I][SeaGreen][black][#2]{#3}
+}
+\NewDocumentCommand\updateTD{O{block} s m}{
+    \block[#1][U][yellow][black][#2]{#3}
+}
+\NewDocumentCommand\deleteTD{O{block} s m}{
+    \block[#1][D][red][black][#2]{#3}
+}
+\NewDocumentCommand\reviewTD{O{block} s m}{
+    \block[#1][R][Cyan][black][#2]{#3}
+}
+
+\newcommand*\circled[1]{%
+    \vspace{-3mm}
+  \begin{tikzpicture}
+    \node[draw,circle,inner sep=0.7pt, left=2mm](C) {\textbf{#1}};
+  \end{tikzpicture}
+}
