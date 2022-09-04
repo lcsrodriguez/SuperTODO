@@ -4,8 +4,9 @@
 
 ## Introduction
 
-LaTeX package for TODO commands
+**`SuperTODO`** is a LaTeX package handling the creation and manipulation of TODO frames, frequently used for long-report writing.
 
+With a large variety of commands (insert, update, delete, ...)[^1], you can easily plan and highligh further tasks to do within your $\TeX$ document and focus yourself on the main writing. 
 
 This package is written using the $\LaTeX 2_\varepsilon$ environment which provides us high-level commands for structuring new packages.
 
@@ -13,6 +14,9 @@ This package is written using the $\LaTeX 2_\varepsilon$ environment which provi
 **Open to contributions**: Feel free to submit a PR in order to extend the available features for a better LaTeX writing experience.
 
 ## Features
+
+**Upload to CTAN**[^2]: The upload on
+
 
 ### Available environments
 
@@ -72,3 +76,7 @@ The development phases required the study and reading of the following online re
 Development: **Lucas RODRIGUEZ** (August 2022 - ...)
 
 Please check the [LICENSE](LICENSE) file for the complete license information.
+
+[^1]: The default commands follow the CRUD (CREATE, READ, UPDATE, DELETE) paradigm.
+
+[^2]: **CTAN**: Comprehensive $\TeX$ Archive Network [official website](https://www.ctan.org/)
