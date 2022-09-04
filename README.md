@@ -1,6 +1,6 @@
 # SuperTODO - TODO $\TeX$ extension
 
-<img src="https://img.shields.io/static/v1?label=LaTeX package&message=supertodo&color=ff0000"/>
+<img src="https://img.shields.io/static/v1?label=LaTeX package&message=supertodo&color=ff0000"/> &nbsp; <img src="https://img.shields.io/static/v1?label=Package version&message=0.1.0&color=0000ff"/>
 
 ## Introduction
 
@@ -23,6 +23,10 @@ This package is written using the $\LaTeX 2_\varepsilon$ environment which provi
 |  DELETE      |       RED           | ✅       |  ✅     |
 |  REVIEW      |       BLUE               |  ✅      |  ✅     |
 
+TODO: Some examples with inline/block, important/normal, ...
+
+
+The **`SuperTODO`** allows a wide flexibility on implementation by making easy to the end-user the declaration and use of new commands.
 
 ### Add a new command
 
@@ -37,11 +41,27 @@ If you want to implement a new command, denoted below as `abcde`, please procede
 }
 ```
 where you can specify:
-- `<capital>`:
-- `<bgcolor>`:
-- `<fgcolor>`:
+- **`abcde`**: the name of the new command
+- `<capital>`: the letter(s) or text character(s) to be specified before the payload text
+- `<bgcolor>`: background color of the frame
+- `<fgcolor>`: foreground color of the frame (text + border color)
+
+You can then use the command as follows:
+
+```latex
+\abcdeTD{Insert the fifth image here}
+```
+
+**Don't forget the `TD`** suffix for every command from this package.
+
+### Screenshots
+
+
+### Sample document
 
 ## References
+
+The development phases required the study and reading of the following online references:
 
 - https://www.overleaf.com/learn/latex/Understanding_packages_and_class_files
 - https://www.overleaf.com/learn/latex/Writing_your_own_package
@@ -49,5 +69,6 @@ where you can specify:
 
 ## License
 
+Development: **Lucas RODRIGUEZ** (August 2022 - ...)
 
 Please check the [LICENSE](LICENSE) file for the complete license information.
