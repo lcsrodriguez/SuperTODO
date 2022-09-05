@@ -127,4 +127,23 @@
 }
 
 % New auxiliary commands
-\newcommand\GetTODO{Number of todo : \theFRAMESCOUNTERALL}
+\newcommand\showOverviewTD{
+    \newpage 
+    \section*{SuperTODO Overview}
+
+    \textit{The information details below are related to the use of the \textbf{SuperTODO} package.}
+    \subsection*{Summary}
+
+    \begin{itemize}
+        \item[$\diamond$] \# of all TODO frames: \hfill \textbf{\theFRAMESCOUNTERALL}
+        \item[$\diamond$] \# of \textbf{INSERT} frames: \hfill \textbf{\theFRAMESCOUNTERINSERT}
+        \item[$\diamond$] \# of \textbf{UPDATE} frames: \hfill \textbf{\theFRAMESCOUNTERUPDATE}
+        \item[$\diamond$] \# of \textbf{DELETE} frames: \hfill \textbf{\theFRAMESCOUNTERDELETE}
+    \end{itemize}
+    \vspace{3mm}
+    \begin{itemize}
+        \item[\textcolor{red}{$\diamond$}] \textcolor{red}{\# of \textbf{IMPORTANT} frames: \hfill \theFRAMESCOUNTERIMPORTANT}
+    \end{itemize}
+    
+    %\subsection*{List}
+}
