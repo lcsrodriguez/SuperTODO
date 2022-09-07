@@ -104,6 +104,15 @@ You can then use the command as follows:
  <img src="img/3.png" width="700px"> 
 </p>
 
+You can also print **at the end of the document** a quick summary of the package's use within the main document:
+```latex
+\showOverviewTD
+```
+
+<p align="center">
+    <img src="img/4.png" width="700px">
+</p>
+
 ### Sample document
 
 You can easily test the module with this [sandbox document](#).
